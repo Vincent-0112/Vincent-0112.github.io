@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 模板
-date: 2020-01-02 19:20:23 +0900
+title: post-simple
+date: 2021-03-28 19:20:23 +0900
 category: sample
 ---
 # 案例
