@@ -112,13 +112,13 @@ code {
 }
 
 .sidebar-brand > a {
-	font-size: 300%;
+	font-size: 200%;
 	font-family: 'Gelasio';
 	color: #fff;
 }
 
 .lead {
-	font-size: 120%;
+	font-size: 100%;
 	color: #aaa;
 }
 
@@ -273,7 +273,7 @@ header.home {
 	letter-spacing: 1px;
 	font-size: 0.8em;
 	display: inline-block;
-	width: 80px;
+	width: 150px;
 }
 
 .author .author-image {

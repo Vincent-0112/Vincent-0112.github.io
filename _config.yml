@@ -32,11 +32,15 @@ svg:
 # Build settings
 # theme: minima
 highlighter-theme: monokai
-date_format: "%Y-%M-%D"
+date_format: "%Y-%M-%D %H:%m"
 plugins:
   - jekyll-feed
 category_dir: category/
 tag_dir: tag/
+
+
+social:
+  github: vincent-0112.github.io
 
 # Exclude from processing.
 # The following items will not be processed, by default.
