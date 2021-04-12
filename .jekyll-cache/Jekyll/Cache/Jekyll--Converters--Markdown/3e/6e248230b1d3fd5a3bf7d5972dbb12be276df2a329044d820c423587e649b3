@@ -1,0 +1,23 @@
+I"i<h1 id="增加代码片段配置">增加代码片段配置</h1>
+
+<p>打开路径： File -&gt; Preferences -&gt; User Snippets -&gt; 选中markdown，添加如下配置：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s2">"code"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"prefix"</span><span class="p">:</span> <span class="s2">"code"</span><span class="p">,</span>  <span class="sr">//</span> <span class="err">触发词</span>
+    <span class="s2">"body"</span><span class="p">:</span> <span class="p">[</span>  <span class="sr">//</span> <span class="err">补全内容</span>
+        <span class="s2">"```"</span><span class="p">,</span>
+        <span class="s2">"$1"</span><span class="p">,</span>  <span class="sr">//</span> <span class="err">光标停留位置</span>
+        <span class="s2">"```"</span>
+    <span class="p">],</span>
+    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Add java code block"</span>  <span class="o">/</span><span class="sr">/ 注释
+}</span></code></pre></figure>
+
+<h1 id="打开markdown代码自动补齐">打开markdown代码自动补齐</h1>
+
+<p>打开路径：左下角Setting -&gt; Command Palette -&gt; 选中Open Settings(JSON)，添加如下配置：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s2">"[markdown]"</span><span class="p">:</span>  <span class="p">{</span>
+        <span class="s2">"editor.quickSuggestions"</span><span class="p">:</span> <span class="kp">true</span>
+<span class="p">}</span></code></pre></figure>
+
+:ET

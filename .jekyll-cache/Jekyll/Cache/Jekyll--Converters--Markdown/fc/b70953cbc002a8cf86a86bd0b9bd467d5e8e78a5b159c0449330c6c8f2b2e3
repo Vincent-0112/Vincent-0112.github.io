@@ -1,0 +1,58 @@
+I"<h1 id="jdk概念">jdk概念</h1>
+
+<p>詹姆斯·高斯林 （James Gosling）是一名软件专家，1955年5月19日出生于加拿大，Java编程语言的共同创始人之一，一般公认他为“Java之父”。</p>
+
+<p><img src="/public/img/2021-03-30-java-father.jpg" alt="avatar" /></p>
+
+<p>jdk是java工程学习、部署、开发、应用的基础，对其发展过程的了解可以对我们深入理解jdk有很大的帮助。</p>
+
+<p><img src="/public/img/2021-03-30-java-conceptual-diagram.jpg" alt="jdk7概念图" /></p>
+
+<ul>
+  <li><strong>jdk是什么</strong><br />
+jdk的全称是 java development kit, 就是java的开发环境。</li>
+  <li><strong>jre是什么</strong><br />
+jre的全称是 Java Runtime Environment，就是java的运行环境。</li>
+  <li><strong>jvm是什么</strong><br />
+jvm的全称是 JVM（Java Virtual Machine)，就是Java虚拟机。</li>
+</ul>
+
+<p>其中jdk是包含jre的，jdk不仅需要提供java的运行环境，同时需要提供基础的类库供开发人员使用。</p>
+
+<h1 id="jdk档案">jdk档案</h1>
+
+<p><img src="/public/img/2021-03-29-jdk-01.jpg" alt="jdk档案" /></p>
+
+<h2 id="左边栏是jdk的不同应用版本">左边栏是jdk的不同应用版本</h2>
+
+<ul>
+  <li><strong>Java SE (Java Platform, Standard Edition)</strong><br />
+jdk的标准版本,是Java技术的核心和基础，是Java ME和Java EE编程的基础。Java SE是由Sun Microsystems公司于1995年5月推出的Java程序设计语言和Java平台的总称。</li>
+  <li><strong>Jave EE (Java Platform, Enterprise Edition)</strong><br />
+jdk的企业版本,是一种利用Java SE平台来简化企业解决方案的开发、部署和管理相关的复杂问题的体系结构。</li>
+  <li><strong>Jave ME (Java Platform, Micro Edition)</strong><br />
+jdk的微型版本,是为机顶盒、移动电话和PDA之类嵌入式消费电子设备提供的Java语言平台，包括虚拟机和一系列标准化的Java API。现在已经被Android代替。</li>
+  <li><strong>Java FX (Java Platform, Micro Edition)</strong> 
+开发具有丰富特性的客户端应用程序,JavaFX最初由Chris Oliver开发，当时他正在为一家名为See Beyond Technology Corporation的公司工作，在2005年，这个公司被Sun Microsystems收购了。</li>
+</ul>
+
+<h2 id="右边栏是java-se的迭代版本">右边栏是Java SE的迭代版本</h2>
+
+<p>Java SE 从 Jave SE 1.1版本一直迭代到今天的 Jave SE 16。从17年的Java SE 9 开始，每半年发布一个新的版本。</p>
+
+<p><img src="/public/img/2021-03-30-JavaSE版本历史.png" alt="avatar" /></p>
+
+<h1 id="参考">参考</h1>
+<blockquote>
+  <p>oracal 官方jdk档案 https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html <br />
+oracle 官方文档： https://docs.oracle.com/en/java/javase/index.html <br />
+java5 到 java 10的特性总结 https://blog.csdn.net/visant/article/details/79778967<br />
+Jave SE基础 https://www.pianshen.com/article/20681621610/<br />
+oracle中文文档 https://www.oracle.com/cn/java/<br />
+openjdk文档 http://openjdk.java.net/projects/jdk/16/<br />
+维基百科 https://www.wiki-wiki.top/wiki/Wikipedia:%E9%A6%96%E9%A1%B5<br />
+jdk8概念图 https://docs.oracle.com/javase/8/docs/<br />
+jdk7概念图 https://docs.oracle.com/javase/7/docs/index.html</p>
+</blockquote>
+
+:ET

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="文森的博客" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>文森的博客</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/">文森的博客</a>
+	</div>
+	<p class="lead">认真工作，快乐生活！</p></div>
+<!--
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+	  
+	  
+      	  <li class="nav-item" href="/">文章</li>
+	  <li>
+	  	<a class="nav-item" href="/">文章</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	
+	</ul>
+</div>
+ -->
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">分类</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#sample">
+				<span class="name">sample</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#java">
+				<span class="name">java</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#tool">
+				<span class="name">tool</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#酌见">
+				<span class="name">酌见</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/guojianbin1991/guojianbin1991.github.io">文森</a></p>
+</div>
+
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			什么是Base64
+		</div>
+		<time class="post-date dt-published" datetime="2021-04-11T21:56:29+08:00" itemprop="datePublished">2021/04/11 21:04
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h1 id="base64是什么">base64是什么</h1>
+<p>百度百科上是这样介绍的：Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。</p>
+
+<p><img src="/public/img/base64-01.jpeg" alt="" /></p>
+
+<p>base64字符有64个，所以可以用6bit二进制数表示，而正常的字符是8bit，所以6和8的最新公倍数是24，也就是4个base64字符能表示3个标准的ascll字符。</p>
+
+<p>将字符转为base64时，首先会将字符串转为ascll码，然后从左到右依次截取6位去对应base64码，若最后不足6位会补0，不足3个字符串则补=，解码时会自动去掉。</p>
+
+<p><img src="/public/img/base64-02.jpeg" alt="" /></p>
+
+<p>由于=字符也可能出现在Base64编码中，但=用在URL、Cookie里面会造成歧义，所以，很多Base64编码后会把=去掉。因为base64码的位数永远是4的倍数，所以解码时若位数不足可以在末尾补=。</p>
+
+<p>将图片转换成Base64的编码方式是因为可以将图片直接嵌入到网页中，而不是从外部载入，这样就减少了HTTP请求。</p>
+
+<h1 id="base64的应用场景">base64的应用场景</h1>
+
+<blockquote>
+  <p>百度百科：https://baike.baidu.com/item/base64/8545775?fr=aladdin</p>
+</blockquote>
+
+
+	</div>
+</article>
+
+		</div>
+	</div>
+  </body>
+</html>
