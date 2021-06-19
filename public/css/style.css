@@ -83,6 +83,7 @@ code {
 	display: flex;
 	justify-content: space-between;
 	flex-flow: row nowrap;
+	background-image: url('/public/img/backgroud-01.jpeg');
 }
 
 .content {
@@ -95,11 +96,12 @@ code {
 	/*position: fixed;*/
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 0 0 220px;
+	flex: 0 0 260px;
 	padding: 15px;
 	z-index: 1;
-	background-color: #222;
+	background-color: #04396b;
 	color: #fff;
+	margin-left: 200px;
 }
 
 .sidebar-item {
@@ -205,8 +207,10 @@ article .share .gplus:hover {
 article {
 	padding: 0 5% 0;
 	font-size: 17px;
-	margin-bottom: 100px;
 	line-height: 1.9;
+	margin-right: 200px;
+	background-color: #d2dbe4;
+	height:100%;
 }
 
 article.home div a, article.home pre a { color: #2c3e50; }
