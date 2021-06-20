@@ -1,0 +1,20 @@
+I"�<h1 id="git-操作之合并到master后打tag">git 操作之合并到master后打tag</h1>
+
+<p>git merge 分支名称 （合并分支）
+git diff （查看冲突）
+git push -u origin master （推送到远程）
+git tag （查看当前标签）
+git tag -a 版本号(v1.0.0) -m “(注释)”
+git push origin tagName （把分支推送到远程上）</p>
+
+<p>git revert <commit> // 本地代码回退到上个提交版本
+git revert --abort  // 撤销revert</commit></p>
+
+<p>git reset –hard <版本号> //本地回退到某个提交版本
+git reset --soft HEAD^  // 撤销reset</版本号></p>
+
+<blockquote>
+  <p>https://blog.csdn.net/zd1007129657/article/details/83824785</p>
+</blockquote>
+
+:ET

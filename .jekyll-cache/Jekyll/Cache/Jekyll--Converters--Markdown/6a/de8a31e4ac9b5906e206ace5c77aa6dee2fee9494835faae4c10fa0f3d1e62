@@ -1,0 +1,212 @@
+I"?!<h1 id="activiti是什么">activiti是什么</h1>
+<p>Activiti项目是一项新的基于Apache许可的开源BPM平台，从基础开始构建，旨在提供支持新的BPMN 2.0标准，包括支持对象管理组（OMG），面对新技术的机遇，诸如互操作性和云架构，提供技术实现。</p>
+
+<h1 id="activiti集成">activiti集成</h1>
+<ul>
+  <li><strong>环境</strong>
+```
+jdk： jdk 8
+系统： linux
+数据库：postgresql</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- **依赖包**
+</code></pre></div></div>
+<p><!--activiti依赖--></p>
+<dependency>
+        <groupId>org.activiti</groupId>
+        <artifactId>activiti-spring-boot-starter-basic</artifactId>
+        <version>6.0.0</version>
+    </dependency>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--数据库驱动--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+    &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+    &lt;version&gt;42.1.4&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!--jpa依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+    &lt;version&gt;2.4.3&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!--web依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt; ```
+</code></pre></div></div>
+
+<ul>
+  <li><strong>数据结构</strong></li>
+</ul>
+
+<p>Activiti的数据库名称都以ACT_开头。第二部分是表用例的两个字符的标识。该用例也将与服务API大致匹配。
+ | 表类型 | 描述 | 
+ | :—–| :—- |
+| ACT_RE_ * | RE代表repository，具有此前缀的表包含静态信息，例如流程定义和流程资源（图像，规则等）。  |
+| ACT_RU_ * | RU代表runtime，这些是运行时表，其中包含流程实例，用户任务，变量，作业等的运行时数据。 Activiti仅在流程实例执行期间存储运行时数据，并在流程实例结束时删除记录。这样可以使运行时表较小而又快速。| 
+| ACT_ID_ * | ID代表identity，这些表包含身份信息，例如用户，组等。|
+| ACT_HI_ *| HI代表history，这些表包含历史数据，例如过去的流程实例，变量，任务等。|
+| ACT_GE_ *| GE代表general，通用数据，用于各种用例中。|</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">表分类</th>
+      <th style="text-align: left">表</th>
+      <th style="text-align: left">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">一般数据</td>
+      <td style="text-align: left">act_ge_bytearray</td>
+      <td style="text-align: left">通用的流程定义和流程资源</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">一般数据</td>
+      <td style="text-align: left">act_ge_property</td>
+      <td style="text-align: left">系统相关属性</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">一般数据</td>
+      <td style="text-align: left">act_evt_log</td>
+      <td style="text-align: left">存储事件处理日志</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_actinst</td>
+      <td style="text-align: left">历史流程实例</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_attachment</td>
+      <td style="text-align: left">历史流程附件</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_comment</td>
+      <td style="text-align: left">历史流程说明性信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_detail</td>
+      <td style="text-align: left">历史的流程运行过程中的细节信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_identitylink</td>
+      <td style="text-align: left">历史流程运行过程中用户关系</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_procinst</td>
+      <td style="text-align: left">历史的流程实例</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_taskinst</td>
+      <td style="text-align: left">历史的任务实例</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程历史记录</td>
+      <td style="text-align: left">act_hi_varinst</td>
+      <td style="text-align: left">历史的流程运行中的变量信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">用户用户组表</td>
+      <td style="text-align: left">act_id_group</td>
+      <td style="text-align: left">身份信息-组信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">用户用户组表</td>
+      <td style="text-align: left">act_id_info</td>
+      <td style="text-align: left">身份信息-组信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">用户用户组表</td>
+      <td style="text-align: left">act_id_membership</td>
+      <td style="text-align: left">身份信息-用户和组关系的中间表</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">用户用户组表</td>
+      <td style="text-align: left">act_id_user</td>
+      <td style="text-align: left">身份信息-用户信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程定义表</td>
+      <td style="text-align: left">act_re_deployment</td>
+      <td style="text-align: left">部署单元信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程定义表</td>
+      <td style="text-align: left">act_re_model</td>
+      <td style="text-align: left">模型信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程定义表</td>
+      <td style="text-align: left">act_re_procdef</td>
+      <td style="text-align: left">已部署的流程定义</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">流程定义表</td>
+      <td style="text-align: left">act_procdef_info</td>
+      <td style="text-align: left">流程定义更新信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_event_subscr</td>
+      <td style="text-align: left">运行时事件</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_execution</td>
+      <td style="text-align: left">运行时流程执行实例</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_identitylink</td>
+      <td style="text-align: left">运行时用户关系信息</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_job</td>
+      <td style="text-align: left">运行时作业</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_task</td>
+      <td style="text-align: left">运行时任务</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_variable</td>
+      <td style="text-align: left">运行时变量表</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_timer_job</td>
+      <td style="text-align: left">未到达定时任务表</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_suspended_job</td>
+      <td style="text-align: left">挂起定时任务表</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">运行实例表</td>
+      <td style="text-align: left">act_ru_deadletter_job</td>
+      <td style="text-align: left">不可执执行定时任务表</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="参考">参考</h1>
+<blockquote>
+  <p>activiti官网 https://www.activiti.org/<br />
+activiti表结构信息 https://www.cnblogs.com/telwanggs/p/7491564.html<br />
+activiti表结构信息 https://blog.csdn.net/nonfuxinyang/article/details/90205389</p>
+</blockquote>
+:ET
